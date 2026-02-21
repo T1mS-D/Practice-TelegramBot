@@ -23,8 +23,8 @@ def init():
 
         crud.create_book(
             db,
-            title="Brave New World",
-            description="Classic sci-fi dystopia",
+            title="I have no mouth and i must scream",
+            description="Post-apocalyptic short story",
             price=14.20,
             category_id=fiction.id
         )
@@ -46,7 +46,7 @@ def init():
             category_id=programming.id
         )
 
-        print("Database initialized with test data ✅")
+        print("Database initialized with test data")
 
     finally:
         db.close()
