@@ -14,8 +14,53 @@
 ## Стек технологий
 - Python
 - PostgreSQL
-- ...
+- SQLAlchemy
+- psycopg2-binary
+- python-dotenv
+- FastAPI
+- Uvicorn
 
 ## Запуск
-
-## Переменные окружения
+### 1. Клонировать репозиторий
+``` bash
+git clone https://github.com/T1mS-D/Practice-TelegramBot.git
+```
+### 2. Создать виртуальное окружение
+``` bash
+python -m venv venv
+```
+Активировать:
+Linux/Mac:
+``` bash
+source venv/bin/activate
+```
+Windows:
+``` bash
+venv\Scripts\activate
+```
+### 3. Установить зависимости
+``` bash
+pip install -r requirements.txt
+```
+### 4. Настроить переменные окружения
+Создать в корне проекта файл .env:
+``` env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=octagon_db
+DB_USER=octagon
+DB_PASSWORD=12345
+```
+### 5. Создать БД
+``` SQL
+CREATE DATABASE octagon_db;
+```
+### 6. Инициализировать тестовые данные
+Необязательный этап, создаст тестовые таблицы с тестовыми данными:
+``` bash
+python -m app.init_db
+```
+### 7. Запустить API
+``` bash
+uvicorn app.main:app --reload
+```
